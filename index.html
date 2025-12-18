@@ -1,0 +1,2938 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+    <head>
+        <title>Website jastip bali</title><hi>
+    </head>
+    <body>
+        <h1> Website jastip bali</h1>
+
+        <p>
+            <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bali Luxury Concierge - Jasa Titip Eksklusif Bali</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #d4af37;
+            --secondary: #1a1a1a;
+            --accent: #8b4513;
+            --light: #f8f8f8;
+            --text: #333;
+            --white: #ffffff;
+            --gray: #777;
+            --success: #28a745;
+            --danger: #dc3545;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header dengan animasi */
+        header {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease;
+        }
+        
+        header.scrolled {
+            padding: 12px 0;
+            background-color: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.5s ease;
+        }
+        
+        .logo:hover::after {
+            width: 100%;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            transition: transform 0.5s ease;
+        }
+        
+        .logo:hover i {
+            transform: rotate(15deg);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .cart-icon:hover {
+            transform: scale(1.1);
+        }
+        
+        .cart-icon.pulse {
+            animation: pulse 0.5s ease;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--primary);
+            color: var(--secondary);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+        
+        .cart-count.bounce {
+            animation: bounce 0.5s ease;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 60%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-8px); }
+            80% { transform: translateY(-4px); }
+        }
+        
+        .cta-button {
+            background-color: var(--primary);
+            color: var(--secondary);
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.7s;
+            z-index: -1;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .cta-button:hover {
+            background-color: #e6c158;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Hero Section dengan animasi */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+            margin-top: 0;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+        
+        .hero .cta-button {
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Services Section dengan animasi */
+        .services {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background-color: var(--primary);
+            animation: expandWidth 1s ease-out 0.5s forwards;
+        }
+        
+        @keyframes expandWidth {
+            from {
+                width: 0;
+            }
+            to {
+                width: 80px;
+            }
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .service-card:nth-child(1) { animation-delay: 0.1s; }
+        .service-card:nth-child(2) { animation-delay: 0.2s; }
+        .service-card:nth-child(3) { animation-delay: 0.3s; }
+        .service-card:nth-child(4) { animation-delay: 0.4s; }
+        .service-card:nth-child(5) { animation-delay: 0.5s; }
+        .service-card:nth-child(6) { animation-delay: 0.6s; }
+        
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.7s;
+            z-index: 1;
+        }
+        
+        .service-card:hover::before {
+            left: 100%;
+        }
+        
+        .service-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-card:hover .service-img {
+            transform: scale(1.05);
+        }
+        
+        .service-content {
+            padding: 25px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 100px 0;
+            background-color: var(--light);
+            display: none;
+        }
+        
+        .products.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .products-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        
+        .back-button {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+        
+        .back-button:hover {
+            background-color: #333;
+            transform: translateX(-5px);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .product-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-img {
+            transform: scale(1.05);
+        }
+        
+        .product-content {
+            padding: 20px;
+        }
+        
+        .product-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+        
+        .product-price {
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        
+        .product-seller {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .add-to-cart {
+            display: block;
+            width: 100%;
+            background-color: var(--primary);
+            color: var(--secondary);
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .add-to-cart::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.7s;
+        }
+        
+        .add-to-cart:hover::before {
+            left: 100%;
+        }
+        
+        .add-to-cart:hover {
+            background-color: #e6c158;
+            transform: translateY(-2px);
+        }
+        
+        /* Cart Sidebar dengan animasi */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 380px;
+            height: 100vh;
+            background-color: var(--white);
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            transition: right 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            z-index: 1001;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .cart-sidebar.active {
+            right: 0;
+        }
+        
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .cart-header h3 {
+            color: var(--secondary);
+        }
+        
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray);
+            transition: transform 0.3s ease;
+        }
+        
+        .close-cart:hover {
+            transform: rotate(90deg);
+        }
+        
+        .cart-items {
+            margin-bottom: 20px;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+        
+        .cart-item {
+            display: flex;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            animation: slideInRight 0.3s ease;
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .cart-item-img {
+            width: 80px;
+            height: 80px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+        
+        .cart-item-details {
+            flex: 1;
+        }
+        
+        .cart-item-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .cart-item-price {
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .cart-item-remove {
+            background: none;
+            border: none;
+            color: var(--danger);
+            cursor: pointer;
+            margin-top: 5px;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        
+        .cart-item-remove:hover {
+            color: #a71e2a;
+        }
+        
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        .checkout-button {
+            display: block;
+            width: 100%;
+            background-color: var(--secondary);
+            color: var(--white);
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .checkout-button:hover {
+            background-color: #333;
+            transform: translateY(-2px);
+        }
+        
+        /* Checkout Section */
+        .checkout {
+            padding: 100px 0;
+            background-color: var(--light);
+            display: none;
+        }
+        
+        .checkout.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .checkout-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .checkout-form, .checkout-summary {
+            animation: slideInUp 0.6s ease;
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .checkout-form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .checkout-summary {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+            outline: none;
+        }
+        
+        textarea.form-control {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .payment-method {
+            border: 2px solid #eee;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .payment-method:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .payment-method.active {
+            border-color: var(--primary);
+            background-color: rgba(212, 175, 55, 0.1);
+            transform: scale(1.05);
+        }
+        
+        .payment-method i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .bank-accounts {
+            margin-top: 20px;
+            display: none;
+        }
+        
+        .bank-accounts.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .bank-account {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+        
+        .bank-account:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .bank-account h4 {
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+        
+        .bank-details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .bank-number {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .bank-copy {
+            background: var(--primary);
+            color: var(--secondary);
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .bank-copy:hover {
+            background: #e6c158;
+            transform: scale(1.05);
+        }
+        
+        .order-summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .order-summary-total {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        .confirm-order {
+            display: block;
+            width: 100%;
+            background-color: var(--primary);
+            color: var(--secondary);
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+        
+        .confirm-order:hover {
+            background-color: #e6c158;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Payment Success Section dengan animasi */
+        .payment-success {
+            padding: 100px 0;
+            background-color: var(--light);
+            display: none;
+            text-align: center;
+        }
+        
+        .payment-success.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .success-icon {
+            font-size: 5rem;
+            color: var(--success);
+            margin-bottom: 30px;
+            animation: bounceIn 1s ease-out;
+        }
+        
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .success-message {
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeInUp 0.8s ease 0.3s both;
+        }
+        
+        .success-message h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .order-details {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 30px auto;
+            text-align: left;
+            animation: fadeInUp 0.8s ease 0.5s both;
+        }
+        
+        .order-details h3 {
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .order-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .info-item {
+            margin-bottom: 10px;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: var(--gray);
+        }
+        
+        /* Loading Spinner */
+        .loading-spinner {
+            display: none;
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+            border-top: 4px solid var(--primary);
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Admin Panel */
+        .admin-panel {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 20px 0;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .admin-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .admin-tab {
+            padding: 10px 20px;
+            background: #f5f5f5;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .admin-tab:hover {
+            background: #e0e0e0;
+        }
+        
+        .admin-tab.active {
+            background: var(--primary);
+            color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        .admin-content {
+            display: none;
+        }
+        
+        .admin-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .product-edit-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .image-preview {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+        
+        .image-preview:hover {
+            border-color: var(--primary);
+        }
+        
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .overlay.active {
+            display: block;
+        }
+        
+        /* About Section dengan animasi */
+        .about {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+            opacity: 0;
+            transform: translateX(-30px);
+            animation: fadeInLeft 1s ease 0.3s forwards;
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateX(30px);
+            animation: fadeInRight 1s ease 0.3s forwards;
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Testimonials dengan animasi */
+        .testimonials {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+        
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .testimonial {
+            background-color: var(--light);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            margin: 0 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .testimonial img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .testimonial:hover img {
+            transform: scale(1.1);
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial h4 {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+        
+        /* Contact dengan animasi */
+        .contact {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-form {
+            flex: 1;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: fadeInLeft 0.8s ease forwards;
+        }
+        
+        .contact-item:nth-child(1) { animation-delay: 0.1s; }
+        .contact-item:nth-child(2) { animation-delay: 0.2s; }
+        .contact-item:nth-child(3) { animation-delay: 0.3s; }
+        .contact-item:nth-child(4) { animation-delay: 0.4s; }
+        
+        .contact-icon {
+            background-color: var(--primary);
+            color: var(--secondary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            transition: all 0.3s;
+        }
+        
+        .contact-item:hover .contact-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .contact-form {
+            opacity: 0;
+            transform: translateX(20px);
+            animation: fadeInRight 0.8s ease 0.3s forwards;
+        }
+        
+        /* Footer dengan animasi */
+        footer {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 70px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .footer-column:nth-child(1) { animation-delay: 0.1s; }
+        .footer-column:nth-child(2) { animation-delay: 0.2s; }
+        .footer-column:nth-child(3) { animation-delay: 0.3s; }
+        .footer-column:nth-child(4) { animation-delay: 0.4s; }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            animation: expandWidth 1s ease 0.5s forwards;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+            opacity: 0;
+            transform: translateX(-10px);
+            animation: fadeInLeft 0.6s ease forwards;
+        }
+        
+        .footer-links li:nth-child(1) { animation-delay: 0.6s; }
+        .footer-links li:nth-child(2) { animation-delay: 0.7s; }
+        .footer-links li:nth-child(3) { animation-delay: 0.8s; }
+        .footer-links li:nth-child(4) { animation-delay: 0.9s; }
+        .footer-links li:nth-child(5) { animation-delay: 1.0s; }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+        
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            color: var(--secondary);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+            opacity: 0;
+            animation: fadeIn 1s ease 1s forwards;
+        }
+        
+        /* Admin Button dengan animasi */
+        .admin-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: var(--secondary);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+        
+        .admin-btn:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-content, .contact-container, .checkout-container {
+                flex-direction: column;
+            }
+            
+            .checkout-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .cart-sidebar {
+                width: 320px;
+            }
+            
+            .product-edit-form {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .products-header {
+                flex-direction: column;
+                gap: 20px;
+                align-items: flex-start;
+            }
+            
+            .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+            
+            .header-actions {
+                margin-top: 15px;
+            }
+            
+            .order-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .admin-tabs {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .payment-methods {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-gem"></i>
+                <span>Bali Luxury Concierge</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#services">Layanan</a></li>
+                    <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#testimonials">Testimoni</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                <a href="#contact" class="cta-button">Hubungi Kami</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>Jasa Titip Eksklusif Bali</h1>
+            <p>Membawa keindahan dan keunikan Bali langsung ke pintu Anda dengan layanan personal yang mewah dan terpercaya.</p>
+            <a href="#services" class="cta-button">Jelajahi Layanan</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Layanan Eksklusif Kami</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-category="kerajinan">
+                    <div class="service-img" style="background-image: url('https://i.pinimg.com/1200x/ae/ff/69/aeff6964bfa6f9b802bfc02a55063422.jpg')"></div>
+                    <div class="service-content">
+                        <h3>Kerajinan Tangan Bali</h3>
+                        <p>Kami menyediakan akses ke kerajinan tangan berkualitas tinggi dari pengrajin lokal terbaik di Bali seperti ukiran kayu, patung batu, dan anyaman tradisional.</p>
+                        <button class="cta-button" style="margin-top: 15px">Lihat Barang</button>
+                    </div>
+                </div>
+                <div class="service-card" data-category="fashion">
+                    <div class="service-img" style="background-image: url('https://i.pinimg.com/1200x/a0/6a/73/a06a73511a58f8d36af68a9124b73f35.jpg')"></div>
+                    <div class="service-content">
+                        <h3>Fashion & Aksesoris</h3>
+                        <p>Koleksi pakaian dan aksesoris eksklusif dengan sentuhan budaya Bali yang autentik seperti batik, tenun ikat, dan perhiasan perak khas Celuk.</p>
+                        <button class="cta-button" style="margin-top: 15px">Lihat Barang</button>
+                    </div>
+                </div>
+                <div class="service-card" data-category="makanan">
+                    <div class="service-img" style="background-image: url('https://i.pinimg.com/1200x/db/ec/3a/dbec3a4a6e068322897cd16c9b40aac0.jpg')"></div>
+                    <div class="service-content">
+                        <h3>Makanan & Minuman Khas</h3>
+                        <p>Rasa autentik Bali dengan produk makanan dan minuman berkualitas premium seperti kopi luwak, rempah-rempah, dan bumbu tradisional.</p>
+                        <button class="cta-button" style="margin-top: 15px">Lihat Barang</button>
+                    </div>
+                </div>
+                <div class="service-card" data-category="seni">
+                    <div class="service-img" style="background-image: url('https://i.pinimg.com/736x/9f/3a/eb/9f3aeb70a9169fc498c377aba4c0300a.jpg')"></div>
+                    <div class="service-content">
+                        <h3>Seni & Dekorasi</h3>
+                        <p>Karya seni dan dekorasi rumah yang mencerminkan keindahan dan spiritualitas Bali seperti lukisan tradisional, topeng, dan ornamen ukiran.</p>
+                        <button class="cta-button" style="margin-top: 15px">Lihat Barang</button>
+                    </div>
+                </div>
+                <div class="service-card" data-category="perawatan">
+                    <div class="service-img" style="background-image: url('https://i.pinimg.com/736x/11/f7/61/11f7610d8a004761cfc13a568f4131bd.jpg')"></div>
+                    <div class="service-content">
+                        <h3>Perawatan Tubuh & Spa</h3>
+                        <p>Produk perawatan tubuh alami dengan ramuan tradisional Bali untuk kesehatan dan kecantikan seperti lulur, minyak aromaterapi, dan sabun herbal.</p>
+                        <button class="cta-button" style="margin-top: 15px">Lihat Barang</button>
+                    </div>
+                </div>
+                <div class="service-card" data-category="kustom">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')"></div>
+                    <div class="service-content">
+                        <h3>Layanan Kustom</h3>
+                        <p>Permintaan khusus? Tim kami siap memenuhi kebutuhan unik Anda dengan layanan personal untuk produk eksklusif yang tidak tersedia di pasaran umum.</p>
+                        <button class="cta-button" style="margin-top: 15px">Lihat Barang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="products-header">
+                <a href="#services" class="back-button" id="backButton">
+                    <i class="fas fa-arrow-left"></i> Kembali ke Layanan
+                </a>
+                <h2 id="productsCategory">Produk</h2>
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded here dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Checkout Section -->
+    <section class="checkout" id="checkout">
+        <div class="container">
+            <div class="products-header">
+                <a href="#" class="back-button" id="backToCartButton">
+                    <i class="fas fa-arrow-left"></i> Kembali ke Keranjang
+                </a>
+                <h2>Checkout</h2>
+            </div>
+            <div class="checkout-container">
+                <div class="checkout-form">
+                    <h3>Informasi Pengiriman</h3>
+                    <form id="checkoutForm">
+                        <div class="form-group">
+                            <label for="fullName">Nama Lengkap</label>
+                            <input type="text" id="fullName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Nomor Telepon</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Alamat Lengkap</label>
+                            <textarea id="address" class="form-control" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">Kota</label>
+                            <input type="text" id="city" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="postalCode">Kode Pos</label>
+                            <input type="text" id="postalCode" class="form-control" required>
+                        </div>
+                        
+                        <h3 style="margin-top: 30px;">Metode Pembayaran</h3>
+                        <div class="payment-methods">
+                            <div class="payment-method" data-method="bank">
+                                <i class="fas fa-university"></i>
+                                <p>Transfer Bank</p>
+                            </div>
+                            <div class="payment-method" data-method="cod">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <p>Bayar di Tempat</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bank-accounts" id="bankAccounts">
+                            <h4>Rekening Bank Tersedia</h4>
+                            <div class="bank-account">
+                                <h4>Bank Central Asia (BCA)</h4>
+                                <div class="bank-details">
+                                    <span class="bank-number">1234 5678 9012</span>
+                                    <button type="button" class="bank-copy" data-number="123456789012">Salin</button>
+                                </div>
+                                <p>a.n. Bali Luxury Concierge</p>
+                            </div>
+                            <div class="bank-account">
+                                <h4>Bank Mandiri</h4>
+                                <div class="bank-details">
+                                    <span class="bank-number">9876 5432 1098</span>
+                                    <button type="button" class="bank-copy" data-number="987654321098">Salin</button>
+                                </div>
+                                <p>a.n. Bali Luxury Concierge</p>
+                            </div>
+                            <div class="bank-account">
+                                <h4>Bank Negara Indonesia (BNI)</h4>
+                                <div class="bank-details">
+                                    <span class="bank-number">5678 1234 9012</span>
+                                    <button type="button" class="bank-copy" data-number="567812349012">Salin</button>
+                                </div>
+                                <p>a.n. Bali Luxury Concierge</p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="checkout-summary">
+                    <h3>Ringkasan Pesanan</h3>
+                    <div id="checkoutItems">
+                        <!-- Checkout items will be loaded here -->
+                    </div>
+                    <div class="order-summary-total">
+                        <span>Total:</span>
+                        <span id="checkoutTotal">Rp 0</span>
+                    </div>
+                    <button class="confirm-order" id="confirmOrder">Konfirmasi Pesanan</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Success Section -->
+    <section class="payment-success" id="paymentSuccess">
+        <div class="container">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="success-message">
+                <h2>Pesanan Berhasil!</h2>
+                <p>Terima kasih telah berbelanja di Bali Luxury Concierge. Pesanan Anda telah kami terima dan sedang diproses.</p>
+                
+                <div class="order-details">
+                    <h3>Detail Pesanan</h3>
+                    <div class="order-info">
+                        <div class="info-item">
+                            <div class="info-label">No. Pesanan</div>
+                            <div id="orderNumber">BLX-2025-001</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Tanggal</div>
+                            <div id="orderDate">12 November 2025</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Nama</div>
+                            <div id="customerName">-</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Email</div>
+                            <div id="customerEmail">-</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Total Pembayaran</div>
+                            <div id="orderTotal">Rp 0</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Metode Pembayaran</div>
+                            <div id="paymentMethod">-</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <p>Kami akan mengirimkan konfirmasi dan detail pengiriman ke email Anda dalam waktu 1x24 jam.</p>
+                <a href="#home" class="cta-button" style="margin-top: 30px;">Kembali ke Beranda</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Panel Section -->
+    <section class="section" id="adminPanel" style="display: none;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Panel Admin - Edit Produk</h2>
+                <p>Kelola dan edit produk yang ditampilkan di website</p>
+            </div>
+            
+            <div class="admin-panel">
+                <div class="admin-tabs">
+                    <button class="admin-tab active" data-tab="editProducts">Edit Produk</button>
+                    <button class="admin-tab" data-tab="addProduct">Tambah Produk</button>
+                    <button class="admin-tab" data-tab="editBanks">Edit Bank</button>
+                </div>
+                
+                <!-- Tab Edit Produk -->
+                <div class="admin-content active" id="editProducts">
+                    <h3>Edit Produk Existing</h3>
+                    <div class="products-grid" id="adminProductsGrid">
+                        <!-- Produk akan dimuat di sini -->
+                    </div>
+                </div>
+                
+                <!-- Tab Tambah Produk -->
+                <div class="admin-content" id="addProduct">
+                    <h3>Tambah Produk Baru</h3>
+                    <form id="addProductForm" class="product-edit-form">
+                        <div>
+                            <div class="form-group">
+                                <label for="newProductName">Nama Produk</label>
+                                <input type="text" id="newProductName" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="newProductPrice">Harga (Rp)</label>
+                                <input type="number" id="newProductPrice" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="newProductSeller">Penjual</label>
+                                <input type="text" id="newProductSeller" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="newProductCategory">Kategori</label>
+                                <select id="newProductCategory" class="form-control" required>
+                                    <option value="kerajinan">Kerajinan Tangan</option>
+                                    <option value="fashion">Fashion & Aksesoris</option>
+                                    <option value="makanan">Makanan & Minuman</option>
+                                    <option value="seni">Seni & Dekorasi</option>
+                                    <option value="perawatan">Perawatan Tubuh</option>
+                                    <option value="kustom">Layanan Kustom</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-group">
+                                <label for="newProductImage">Gambar Produk</label>
+                                <input type="file" id="newProductImage" class="form-control" accept="image/*">
+                                <small>Upload gambar baru (JPEG, PNG, WebP) - Maksimal 2MB</small>
+                            </div>
+                            <div class="image-preview" id="newProductPreview"></div>
+                            <div class="form-group">
+                                <label for="newProductImageUrl">ATAU URL Gambar Existing</label>
+                                <input type="url" id="newProductImageUrl" class="form-control" 
+                                       placeholder="https://example.com/image.jpg">
+                                <small>Contoh: https://images.unsplash.com/photo-1586023492125-27b2c045efd7</small>
+                            </div>
+                            <button type="submit" class="cta-button">Tambah Produk</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Tab Edit Bank -->
+                <div class="admin-content" id="editBanks">
+                    <h3>Edit Rekening Bank</h3>
+                    <form id="editBanksForm">
+                        <div class="form-group">
+                            <label>Bank 1 (BCA)</label>
+                            <input type="text" id="bank1Name" class="form-control" value="Bank Central Asia (BCA)" required>
+                            <input type="text" id="bank1Number" class="form-control" value="1234 5678 9012" required>
+                            <input type="text" id="bank1Holder" class="form-control" value="Bali Luxury Concierge" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Bank 2 (Mandiri)</label>
+                            <input type="text" id="bank2Name" class="form-control" value="Bank Mandiri" required>
+                            <input type="text" id="bank2Number" class="form-control" value="9876 5432 1098" required>
+                            <input type="text" id="bank2Holder" class="form-control" value="Bali Luxury Concierge" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Bank 3 (BNI)</label>
+                            <input type="text" id="bank3Name" class="form-control" value="Bank Negara Indonesia (BNI)" required>
+                            <input type="text" id="bank3Number" class="form-control" value="5678 1234 9012" required>
+                            <input type="text" id="bank3Holder" class="form-control" value="Bali Luxury Concierge" required>
+                        </div>
+                        <button type="submit" class="cta-button">Simpan Perubahan Bank</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="cta-button" onclick="hideAdminPanel()">Kembali ke Website</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Edit Produk -->
+    <div class="overlay" id="editProductOverlay" style="display: none;">
+        <div class="cart-sidebar" style="width: 90%; max-width: 600px;">
+            <div class="cart-header">
+                <h3>Edit Produk</h3>
+                <button class="close-cart" onclick="closeEditModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="editProductForm" class="product-edit-form" style="padding: 20px;">
+                <input type="hidden" id="editProductId">
+                <input type="hidden" id="editProductOriginalCategory">
+                
+                <div>
+                    <div class="form-group">
+                        <label for="editProductName">Nama Produk</label>
+                        <input type="text" id="editProductName" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editProductPrice">Harga (Rp)</label>
+                        <input type="number" id="editProductPrice" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editProductSeller">Penjual</label>
+                        <input type="text" id="editProductSeller" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editProductCategory">Kategori</label>
+                        <select id="editProductCategory" class="form-control" required>
+                            <option value="kerajinan">Kerajinan Tangan</option>
+                            <option value="fashion">Fashion & Aksesoris</option>
+                            <option value="makanan">Makanan & Minuman</option>
+                            <option value="seni">Seni & Dekorasi</option>
+                            <option value="perawatan">Perawatan Tubuh</option>
+                            <option value="kustom">Layanan Kustom</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group">
+                        <label for="editProductImage">Ganti Gambar Produk</label>
+                        <input type="file" id="editProductImage" class="form-control" accept="image/*">
+                        <small>Upload gambar baru (JPEG, PNG, WebP) - Maksimal 2MB</small>
+                    </div>
+                    <div class="image-preview" id="editProductPreview"></div>
+                    <div class="form-group">
+                        <label for="editProductImageUrl">ATAU Gunakan URL Gambar</label>
+                        <input type="url" id="editProductImageUrl" class="form-control" 
+                               placeholder="https://example.com/image.jpg">
+                        <small>Contoh: https://images.unsplash.com/photo-1586023492125-27b2c045efd7</small>
+                    </div>
+                    <div style="display: flex; gap: 10px; margin-top: 20px;">
+                        <button type="submit" class="cta-button">Simpan Perubahan</button>
+                        <button type="button" class="cta-button" style="background: #dc3545;" 
+                                onclick="deleteProduct()">Hapus Produk</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Mengapa Memilih Layanan Kami?</h2>
+                    <p>Bali Luxury Concierge hadir untuk menghadirkan keindahan dan keunikan Bali langsung kepada Anda. Dengan jaringan yang luas di seluruh Bali, kami menghubungkan Anda dengan pengrajin, seniman, dan produsen terbaik di pulau dewata ini.</p>
+                    <p>Kami berkomitmen untuk memberikan layanan terbaik dengan standar kualitas tertinggi. Setiap produk yang kami tawarkan dipilih dengan cermat untuk memastikan keaslian, kualitas, dan nilai seni yang tinggi.</p>
+                    <p>Dengan tim yang berpengalaman dan berdedikasi, kami memastikan setiap pesanan ditangani dengan penuh perhatian dan dikirimkan dengan aman ke alamat Anda.</p>
+                    <a href="#contact" class="cta-button">Hubungi Kami</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="About Bali Luxury Concierge">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Apa Kata Klien Kami</h2>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Client">
+                    <p>"Layanan yang luar biasa! Saya memesan patung kayu ukir khas Bali dan hasilnya melebihi ekspektasi. Pengiriman tepat waktu dan produk dikemas dengan sangat baik."</p>
+                    <h4>Sarah Johnson</h4>
+                    <p>Jakarta</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Hubungi Kami</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Alamat</h3>
+                            <p>Jl. Raya Seminyak No. 88, Seminyak, Bali</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3>Telepon</h3>
+                            <p>+62 361 1234567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@baliluxuryconcierge.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3>Jam Operasional</h3>
+                            <p>Senin - Minggu: 09.00 - 18.00 WITA</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subjek</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Pesan</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Bali Luxury Concierge</h3>
+                    <p>Menghadirkan keindahan dan keunikan Bali dengan layanan eksklusif dan personal untuk pengalaman berbelanja yang tak terlupakan.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Layanan</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services">Kerajinan Tangan</a></li>
+                        <li><a href="#services">Fashion & Aksesoris</a></li>
+                        <li><a href="#services">Makanan & Minuman</a></li>
+                        <li><a href="#services">Seni & Dekorasi</a></li>
+                        <li><a href="#services">Perawatan Tubuh</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Informasi</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                        <li><a href="#">Syarat & Ketentuan</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Berlangganan newsletter kami untuk mendapatkan penawaran eksklusif dan informasi terbaru.</p>
+                    <form id="newsletterForm">
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email Anda" required>
+                        </div>
+                        <button type="submit" class="cta-button">Berlangganan</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Bali Luxury Concierge. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Keranjang Belanja</h3>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be added here dynamically -->
+        </div>
+        <div class="cart-total">
+            <span>Total:</span>
+            <span id="cartTotal">Rp 0</span>
+        </div>
+        <button class="checkout-button" id="checkoutButton">Checkout</button>
+    </div>
+
+    <!-- Admin Button -->
+    <button class="admin-btn" id="adminButton">🔧 Admin</button>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" id="loadingSpinner"></div>
+
+    <script>
+        // Product data
+        const products = {
+            kerajinan: [
+                {
+                    id: 1,
+                    name: "Kerajinan anyaman bali",
+                    price: 1250000,
+                    image: "https://i.pinimg.com/736x/4e/93/07/4e93072319bb61dc70f8f186d20b185c.jpg",
+                    seller: "BaliArtisan"
+                },
+                {
+                    id: 2,
+                    name: "Ukiran Kayu",
+                    price: 850000,
+                    image: "https://i.pinimg.com/736x/05/9e/60/059e607ef5f600a08a40a3a7723f9314.jpg",
+                    seller: "BaliCraftMaster"
+                },
+                {
+                    id: 3,
+                    name: "Kerajinan kayu",
+                    price: 350000,
+                    image: "https://i.pinimg.com/1200x/fe/93/43/fe9343ff99451be51250ef32d9339234.jpg",
+                    seller: "BaliWeaveArt"
+                }
+            ],
+            fashion: [
+                {
+                    id: 4,
+                    name: "Tenun Endek Premium",
+                    price: 750000,
+                    image: "https://i.pinimg.com/736x/e5/c2/b7/e5c2b708f27c2910d27e203a27bc8605.jpg",
+                    seller: "BaliWeaveLux"
+                },
+                {
+                    id: 5,
+                    name: "Perhiasan Perak",
+                    price: 1200000,
+                    image: "https://i.pinimg.com/736x/e4/fa/cb/e4facb0558408fc23be96f3d108de34c.jpg",
+                    seller: "SilverArtBali"
+                },
+                {
+                    id: 6,
+                    name: "Sarung Bali Eksklusif",
+                    price: 450000,
+                    image: "https://i.pinimg.com/1200x/26/d8/3e/26d83eb817be5791a40baa49c9d9b9a7.jpg",
+                    seller: "BaliTextileHouse"
+                }
+            ],
+            makanan: [
+                {
+                    id: 7,
+                    name: "Kopi Luwak Gold Selection",
+                    price: 350000,
+                    image: "https://i.pinimg.com/1200x/01/c9/a3/01c9a394903181c7533e9c22965f3db8.jpg",
+                    seller: "BaliCoffeeCo"
+                },
+                {
+                    id: 8,
+                    name: "Sambal Matah Authentic",
+                    price: 75000,
+                    image: "https://i.pinimg.com/1200x/57/e0/1b/57e01b10fa7e489e705610f669b9c21c.jpg",
+                    seller: "BaliFoodHunter"
+                },
+                {
+                    id: 9,
+                    name: "Bumbu Bali Premium Set",
+                    price: 150000,
+                    image: "https://i.pinimg.com/1200x/3b/bc/36/3bbc36822c8c95837101c350a4532300.jpg",
+                    seller: "BaliSpiceMaster"
+                }
+            ],
+            seni: [
+                {
+                    id: 10,
+                    name: "Lukisan Tradisional",
+                    price: 1850000,
+                    image: "https://i.pinimg.com/736x/11/b2/08/11b208ddd0585235d9c9d8bfdce21628.jpg",
+                    seller: "BaliArtGallery"
+                },
+                {
+                    id: 11,
+                    name: "Topeng Barong Eksklusif",
+                    price: 950000,
+                    image: "https://i.pinimg.com/736x/d0/32/35/d0323592376b68a968ae1347d6b4b58b.jpg",
+                    seller: "BaliMaskArt"
+                },
+                {
+                    id: 12,
+                    name: "Ornamen Ukiran Bali",
+                    price: 650000,
+                    image: "https://i.pinimg.com/1200x/33/97/99/339799efe29d1ccda60e794d528583d1.jpg",
+                    seller: "BaliCarvingStudio"
+                }
+            ],
+            perawatan: [
+                {
+                    id: 13,
+                    name: "Lulur Tradisional Bali",
+                    price: 250000,
+                    image: "https://i.pinimg.com/736x/82/40/3a/82403acb13c172fe616d444781201e73.jpg",
+                    seller: "BaliSpaEssentials"
+                },
+                {
+                    id: 14,
+                    name: "Minyak Aromaterapi Bali",
+                    price: 180000,
+                    image: "https://i.pinimg.com/736x/63/76/9c/63769c7f41b604cb0e739ca72f7b85a3.jpg",
+                    seller: "BaliAromaTherapy"
+                },
+                {
+                    id: 15,
+                    name: "Sabun Herbal Tradisional",
+                    price: 120000,
+                    image: "https://i.pinimg.com/1200x/7c/96/85/7c9685387c79ddf917ea990360ee12ba.jpg",
+                    seller: "BaliHerbalSoap"
+                }
+            ],
+            kustom: [
+                {
+                    id: 16,
+                    name: "Layanan Request Kustom",
+                    price: 0,
+                    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    seller: "BaliConciergeTeam"
+                }
+            ]
+        };
+
+        // Category names for display
+        const categoryNames = {
+            kerajinan: "Kerajinan Tangan Bali",
+            fashion: "Fashion & Aksesoris",
+            makanan: "Makanan & Minuman Khas",
+            seni: "Seni & Dekorasi",
+            perawatan: "Perawatan Tubuh & Spa",
+            kustom: "Layanan Kustom"
+        };
+
+        // Cart functionality
+        let cart = [];
+        const cartIcon = document.getElementById('cartIcon');
+        const cartSidebar = document.getElementById('cartSidebar');
+        const closeCart = document.getElementById('closeCart');
+        const overlay = document.getElementById('overlay');
+        const cartItems = document.getElementById('cartItems');
+        const cartTotal = document.getElementById('cartTotal');
+        const cartCount = document.querySelector('.cart-count');
+        const checkoutButton = document.getElementById('checkoutButton');
+        const backToCartButton = document.getElementById('backToCartButton');
+        const confirmOrderButton = document.getElementById('confirmOrder');
+        const checkoutSection = document.getElementById('checkout');
+        const paymentSuccessSection = document.getElementById('paymentSuccess');
+        const bankAccounts = document.getElementById('bankAccounts');
+        const adminButton = document.getElementById('adminButton');
+        const adminPanel = document.getElementById('adminPanel');
+        const loadingSpinner = document.getElementById('loadingSpinner');
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeEventListeners();
+            updateCurrentYear();
+            handleScrollAnimation();
+            handleHeaderScroll();
+        });
+
+        function updateCurrentYear() {
+            // Update tahun di footer
+            document.querySelector('.copyright p').innerHTML = '&copy; 2025 Bali Luxury Concierge. All Rights Reserved.';
+            
+            // Update tahun di order details
+            document.getElementById('orderDate').textContent = '12 November 2025';
+            document.getElementById('orderNumber').textContent = 'BLX-2025-' + Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+        }
+
+        // Fungsi untuk mendeteksi elemen yang masuk ke viewport
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.bottom >= 0
+            );
+        }
+
+        // Fungsi untuk menangani animasi scroll
+        function handleScrollAnimation() {
+            const elements = document.querySelectorAll('.service-card, .section-title, .about-text, .about-image, .testimonial, .contact-item, .contact-form, .footer-column');
+            elements.forEach(element => {
+                if (isElementInViewport(element)) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Fungsi untuk menambahkan efek scroll pada header
+        function handleHeaderScroll() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+
+        // Fungsi untuk menampilkan loading spinner
+        function showLoading() {
+            loadingSpinner.style.display = 'block';
+        }
+
+        // Fungsi untuk menyembunyikan loading spinner
+        function hideLoading() {
+            loadingSpinner.style.display = 'none';
+        }
+
+        // Fungsi untuk menambahkan efek pulse pada cart icon
+        function pulseCartIcon() {
+            const cartIcon = document.querySelector('.cart-icon');
+            cartIcon.classList.add('pulse');
+            setTimeout(() => {
+                cartIcon.classList.remove('pulse');
+            }, 500);
+        }
+
+        // Fungsi untuk menambahkan efek bounce pada cart count
+        function bounceCartCount() {
+            const cartCount = document.querySelector('.cart-count');
+            cartCount.classList.add('bounce');
+            setTimeout(() => {
+                cartCount.classList.remove('bounce');
+            }, 500);
+        }
+
+        function initializeEventListeners() {
+            // Service card click handlers
+            document.querySelectorAll('.service-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    showProducts(category);
+                });
+            });
+
+            // Back button functionality
+            document.getElementById('backButton').addEventListener('click', function(e) {
+                e.preventDefault();
+                hideProducts();
+            });
+
+            // Cart functionality
+            cartIcon.addEventListener('click', showCart);
+            closeCart.addEventListener('click', hideCart);
+            overlay.addEventListener('click', hideCart);
+            checkoutButton.addEventListener('click', proceedToCheckout);
+            backToCartButton.addEventListener('click', backToCart);
+            confirmOrderButton.addEventListener('click', confirmOrder);
+
+            // Payment method selection
+            document.querySelectorAll('.payment-method').forEach(method => {
+                method.addEventListener('click', function() {
+                    document.querySelectorAll('.payment-method').forEach(m => {
+                        m.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    const paymentMethod = this.getAttribute('data-method');
+                    if (paymentMethod === 'bank') {
+                        bankAccounts.classList.add('active');
+                    } else {
+                        bankAccounts.classList.remove('active');
+                    }
+                });
+            });
+
+            // Copy bank account number
+            document.querySelectorAll('.bank-copy').forEach(button => {
+                button.addEventListener('click', function() {
+                    const accountNumber = this.getAttribute('data-number');
+                    navigator.clipboard.writeText(accountNumber).then(() => {
+                        alert('Nomor rekening berhasil disalin: ' + accountNumber);
+                    });
+                });
+            });
+
+            // Form submissions
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Pesan Anda telah terkirim! Kami akan menghubungi Anda segera.');
+                this.reset();
+            });
+
+            document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Terima kasih telah berlangganan newsletter kami!');
+                this.reset();
+            });
+
+            // Admin panel functionality
+            adminButton.addEventListener('click', showAdminPanel);
+            
+            // Admin tabs
+            document.querySelectorAll('.admin-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.admin-content').forEach(c => c.classList.remove('active'));
+                    
+                    this.classList.add('active');
+                    document.getElementById(this.getAttribute('data-tab')).classList.add('active');
+                });
+            });
+            
+            // Edit product form
+            document.getElementById('editProductForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                saveProductChanges();
+            });
+            
+            // Add product form
+            document.getElementById('addProductForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                addNewProduct();
+            });
+            
+            // Edit banks form
+            document.getElementById('editBanksForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Data bank berhasil diupdate!');
+            });
+            
+            // Image preview for new product
+            document.getElementById('newProductImage').addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    if (file.size > 2 * 1024 * 1024) {
+                        alert('Ukuran file terlalu besar. Maksimal 2MB.');
+                        this.value = '';
+                        return;
+                    }
+                    
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        document.getElementById('newProductPreview').style.backgroundImage = `url('${e.target.result}')`;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+            
+            // Image preview for edit product
+            document.getElementById('editProductImage').addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    if (file.size > 2 * 1024 * 1024) {
+                        alert('Ukuran file terlalu besar. Maksimal 2MB.');
+                        this.value = '';
+                        return;
+                    }
+                    
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        document.getElementById('editProductPreview').style.backgroundImage = `url('${e.target.result}')`;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Event listener untuk scroll
+            window.addEventListener('scroll', () => {
+                handleScrollAnimation();
+                handleHeaderScroll();
+            });
+        }
+
+        // Show products for a category
+        function showProducts(category) {
+            const productsSection = document.getElementById('products');
+            const productsGrid = document.getElementById('productsGrid');
+            const productsCategory = document.getElementById('productsCategory');
+            
+            // Tampilkan loading spinner
+            showLoading();
+            
+            // Simulasikan loading dengan timeout
+            setTimeout(() => {
+                // Update category title
+                productsCategory.textContent = categoryNames[category];
+                
+                // Clear previous products
+                productsGrid.innerHTML = '';
+                
+                // Add products to grid
+                let delay = 0;
+                products[category].forEach(product => {
+                    const productCard = document.createElement('div');
+                    productCard.className = 'product-card';
+                    productCard.style.animationDelay = `${delay}s`;
+                    productCard.innerHTML = `
+                        <div class="product-img" style="background-image: url('${product.image}')"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">${product.name}</h3>
+                            <div class="product-price">${product.price > 0 ? 'Rp ' + product.price.toLocaleString('id-ID') : 'Hubungi untuk harga'}</div>
+                            <div class="product-seller">Oleh: ${product.seller}</div>
+                            <button class="add-to-cart" data-id="${product.id}">
+                                ${product.price > 0 ? 'Tambah ke Keranjang' : 'Request Barang'}
+                            </button>
+                        </div>
+                    `;
+                    productsGrid.appendChild(productCard);
+                    delay += 0.1;
+                });
+                
+                // Show products section and hide services
+                document.getElementById('services').style.display = 'none';
+                productsSection.classList.add('active');
+                
+                // Scroll to products section
+                window.scrollTo({
+                    top: productsSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Add event listeners to add to cart buttons
+                document.querySelectorAll('.add-to-cart').forEach(button => {
+                    button.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        const productId = parseInt(this.getAttribute('data-id'));
+                        addToCart(productId);
+                    });
+                });
+                
+                // Sembunyikan loading spinner
+                hideLoading();
+            }, 500);
+        }
+
+        // Hide products and show services
+        function hideProducts() {
+            document.getElementById('products').classList.remove('active');
+            document.getElementById('services').style.display = 'block';
+            
+            window.scrollTo({
+                top: document.getElementById('services').offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+
+        // Add to cart function
+        function addToCart(productId) {
+            // Find product in all categories
+            let product = null;
+            for (const category in products) {
+                const foundProduct = products[category].find(p => p.id === productId);
+                if (foundProduct) {
+                    product = foundProduct;
+                    break;
+                }
+            }
+            
+            if (!product) return;
+            
+            // Check if product is already in cart
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image,
+                    quantity: 1
+                });
+            }
+            
+            updateCart();
+            showCart();
+            
+            // Tambahkan efek animasi
+            pulseCartIcon();
+            bounceCartCount();
+            
+            // Show confirmation
+            if (product.price > 0) {
+                alert(`${product.name} telah ditambahkan ke keranjang!`);
+            } else {
+                alert('Permintaan Anda telah dicatat! Kami akan menghubungi Anda untuk detail lebih lanjut.');
+            }
+        }
+
+        // Update cart display
+        function updateCart() {
+            // Update cart count
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+            
+            // Update cart items
+            cartItems.innerHTML = '';
+            let totalPrice = 0;
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p>Keranjang belanja kosong</p>';
+                checkoutButton.disabled = true;
+            } else {
+                checkoutButton.disabled = false;
+                let delay = 0;
+                cart.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    totalPrice += itemTotal;
+                    
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item';
+                    cartItem.style.animationDelay = `${delay}s`;
+                    cartItem.innerHTML = `
+                        <div class="cart-item-img" style="background-image: url('${item.image}')"></div>
+                        <div class="cart-item-details">
+                            <div class="cart-item-title">${item.name}</div>
+                            <div class="cart-item-price">Rp ${itemTotal.toLocaleString('id-ID')}</div>
+                            <div>Qty: ${item.quantity}</div>
+                            <button class="cart-item-remove" data-id="${item.id}">Hapus</button>
+                        </div>
+                    `;
+                    cartItems.appendChild(cartItem);
+                    delay += 0.1;
+                });
+            }
+            
+            // Update total
+            cartTotal.textContent = `Rp ${totalPrice.toLocaleString('id-ID')}`;
+            
+            // Add event listeners to remove buttons
+            document.querySelectorAll('.cart-item-remove').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = parseInt(this.getAttribute('data-id'));
+                    removeFromCart(productId);
+                });
+            });
+        }
+
+        // Remove from cart function
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCart();
+        }
+
+        // Show cart sidebar
+        function showCart() {
+            cartSidebar.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Hide cart sidebar
+        function hideCart() {
+            cartSidebar.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Proceed to checkout
+        function proceedToCheckout() {
+            if (cart.length === 0) {
+                alert('Keranjang belanja Anda kosong!');
+                return;
+            }
+            
+            hideCart();
+            document.getElementById('services').style.display = 'none';
+            document.getElementById('products').classList.remove('active');
+            checkoutSection.classList.add('active');
+            
+            // Update checkout summary
+            updateCheckoutSummary();
+            
+            window.scrollTo({
+                top: checkoutSection.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+
+        // Back to cart from checkout
+        function backToCart(e) {
+            e.preventDefault();
+            checkoutSection.classList.remove('active');
+            document.getElementById('services').style.display = 'block';
+            showCart();
+        }
+
+        // Update checkout summary
+        function updateCheckoutSummary() {
+            const checkoutItems = document.getElementById('checkoutItems');
+            const checkoutTotal = document.getElementById('checkoutTotal');
+            
+            checkoutItems.innerHTML = '';
+            let totalPrice = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                totalPrice += itemTotal;
+                
+                const itemElement = document.createElement('div');
+                itemElement.className = 'order-summary-item';
+                itemElement.innerHTML = `
+                    <div>
+                        <div>${item.name}</div>
+                        <small>Qty: ${item.quantity}</small>
+                    </div>
+                    <div>Rp ${itemTotal.toLocaleString('id-ID')}</div>
+                `;
+                checkoutItems.appendChild(itemElement);
+            });
+            
+            checkoutTotal.textContent = `Rp ${totalPrice.toLocaleString('id-ID')}`;
+        }
+
+        // Confirm order
+        function confirmOrder() {
+            const checkoutForm = document.getElementById('checkoutForm');
+            const formData = new FormData(checkoutForm);
+            
+            // Validate form
+            let isValid = true;
+            const requiredFields = ['fullName', 'email', 'phone', 'address', 'city', 'postalCode'];
+            
+            requiredFields.forEach(field => {
+                const input = document.getElementById(field);
+                if (!input.value.trim()) {
+                    isValid = false;
+                    input.style.borderColor = 'var(--danger)';
+                } else {
+                    input.style.borderColor = '#ddd';
+                }
+            });
+            
+            // Check if payment method is selected
+            const selectedPayment = document.querySelector('.payment-method.active');
+            if (!selectedPayment) {
+                isValid = false;
+                alert('Silakan pilih metode pembayaran!');
+            }
+            
+            if (!isValid) {
+                alert('Silakan lengkapi semua field yang wajib diisi!');
+                return;
+            }
+            
+            // Tampilkan loading spinner
+            showLoading();
+            
+            // Process order
+            setTimeout(() => {
+                const orderData = {
+                    customer: {
+                        name: document.getElementById('fullName').value,
+                        email: document.getElementById('email').value,
+                        phone: document.getElementById('phone').value,
+                        address: document.getElementById('address').value,
+                        city: document.getElementById('city').value,
+                        postalCode: document.getElementById('postalCode').value
+                    },
+                    items: cart,
+                    paymentMethod: selectedPayment.getAttribute('data-method'),
+                    orderDate: new Date().toLocaleDateString('id-ID', {
+                        day: 'numeric',
+                        month: 'long',
+                        year: 'numeric'
+                    }),
+                    orderNumber: 'BLX-2025-' + Math.floor(Math.random() * 1000).toString().padStart(3, '0')
+                };
+                
+                // Calculate total
+                const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                
+                // Update success page
+                document.getElementById('orderNumber').textContent = orderData.orderNumber;
+                document.getElementById('orderDate').textContent = orderData.orderDate;
+                document.getElementById('customerName').textContent = orderData.customer.name;
+                document.getElementById('customerEmail').textContent = orderData.customer.email;
+                document.getElementById('orderTotal').textContent = 'Rp ' + total.toLocaleString('id-ID');
+                document.getElementById('paymentMethod').textContent = 
+                    orderData.paymentMethod === 'bank' ? 'Transfer Bank' : 'Bayar di Tempat';
+                
+                // Show success page
+                checkoutSection.classList.remove('active');
+                paymentSuccessSection.classList.add('active');
+                
+                // Clear cart
+                cart = [];
+                updateCart();
+                
+                // Sembunyikan loading spinner
+                hideLoading();
+                
+                window.scrollTo({
+                    top: paymentSuccessSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }, 1500);
+        }
+
+        // Admin Panel Functions
+        function showAdminPanel() {
+            adminPanel.style.display = 'block';
+            document.getElementById('services').style.display = 'none';
+            document.getElementById('products').style.display = 'none';
+            document.getElementById('checkout').style.display = 'none';
+            document.getElementById('paymentSuccess').style.display = 'none';
+            loadAdminProducts();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        function hideAdminPanel() {
+            adminPanel.style.display = 'none';
+            document.getElementById('services').style.display = 'block';
+        }
+        
+        function loadAdminProducts() {
+            const adminGrid = document.getElementById('adminProductsGrid');
+            adminGrid.innerHTML = '';
+            
+            for (const category in products) {
+                products[category].forEach(product => {
+                    const productCard = document.createElement('div');
+                    productCard.className = 'product-card';
+                    productCard.innerHTML = `
+                        <div class="product-img" style="background-image: url('${product.image}')"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">${product.name}</h3>
+                            <div class="product-price">Rp ${product.price.toLocaleString('id-ID')}</div>
+                            <div class="product-seller">Oleh: ${product.seller}</div>
+                            <div class="product-seller">Kategori: ${categoryNames[category]}</div>
+                            <button class="add-to-cart" onclick="openEditModal(${product.id}, '${category}')">
+                                Edit Produk
+                            </button>
+                        </div>
+                    `;
+                    adminGrid.appendChild(productCard);
+                });
+            }
+        }
+        
+        function openEditModal(productId, category) {
+            const product = products[category].find(p => p.id === productId);
+            if (!product) return;
+            
+            document.getElementById('editProductId').value = productId;
+            document.getElementById('editProductOriginalCategory').value = category;
+            document.getElementById('editProductName').value = product.name;
+            document.getElementById('editProductPrice').value = product.price;
+            document.getElementById('editProductSeller').value = product.seller;
+            document.getElementById('editProductCategory').value = category;
+            document.getElementById('editProductImageUrl').value = product.image;
+            document.getElementById('editProductPreview').style.backgroundImage = `url('${product.image}')`;
+            
+            document.getElementById('editProductOverlay').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeEditModal() {
+            document.getElementById('editProductOverlay').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        function saveProductChanges() {
+            const productId = parseInt(document.getElementById('editProductId').value);
+            const originalCategory = document.getElementById('editProductOriginalCategory').value;
+            const newCategory = document.getElementById('editProductCategory').value;
+            const name = document.getElementById('editProductName').value;
+            const price = parseInt(document.getElementById('editProductPrice').value);
+            const seller = document.getElementById('editProductSeller').value;
+            const imageUrl = document.getElementById('editProductImageUrl').value;
+            const imageFile = document.getElementById('editProductImage').files[0];
+            
+            let newImageUrl = imageUrl;
+            
+            // Handle image upload
+            if (imageFile) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    newImageUrl = e.target.result;
+                    updateProduct(productId, originalCategory, newCategory, name, price, seller, newImageUrl);
+                };
+                reader.readAsDataURL(imageFile);
+            } else {
+                updateProduct(productId, originalCategory, newCategory, name, price, seller, newImageUrl);
+            }
+        }
+        
+        function updateProduct(productId, originalCategory, newCategory, name, price, seller, imageUrl) {
+            // Hapus dari kategori lama
+            products[originalCategory] = products[originalCategory].filter(p => p.id !== productId);
+            
+            // Tambahkan ke kategori baru
+            products[newCategory].push({
+                id: productId,
+                name: name,
+                price: price,
+                seller: seller,
+                image: imageUrl
+            });
+            
+            alert('Produk berhasil diupdate!');
+            closeEditModal();
+            loadAdminProducts();
+            
+            // Refresh products grid jika sedang dilihat
+            if (document.getElementById('products').classList.contains('active')) {
+                const currentCategory = document.getElementById('productsCategory').textContent;
+                const categoryKey = Object.keys(categoryNames).find(key => categoryNames[key] === currentCategory);
+                if (categoryKey) showProducts(categoryKey);
+            }
+        }
+        
+        function deleteProduct() {
+            if (!confirm('Apakah Anda yakin ingin menghapus produk ini?')) return;
+            
+            const productId = parseInt(document.getElementById('editProductId').value);
+            const category = document.getElementById('editProductOriginalCategory').value;
+            
+            products[category] = products[category].filter(p => p.id !== productId);
+            
+            alert('Produk berhasil dihapus!');
+            closeEditModal();
+            loadAdminProducts();
+        }
+        
+        function addNewProduct() {
+            const name = document.getElementById('newProductName').value;
+            const price = parseInt(document.getElementById('newProductPrice').value);
+            const seller = document.getElementById('newProductSeller').value;
+            const category = document.getElementById('newProductCategory').value;
+            const imageUrl = document.getElementById('newProductImageUrl').value;
+            const imageFile = document.getElementById('newProductImage').files[0];
+            
+            // Generate ID baru
+            const newId = Math.max(...Object.values(products).flat().map(p => p.id)) + 1;
+            
+            let finalImageUrl = imageUrl || 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80';
+            
+            // Handle image upload
+            if (imageFile) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    finalImageUrl = e.target.result;
+                    completeAddProduct(newId, name, price, seller, category, finalImageUrl);
+                };
+                reader.readAsDataURL(imageFile);
+            } else {
+                completeAddProduct(newId, name, price, seller, category, finalImageUrl);
+            }
+        }
+        
+        function completeAddProduct(id, name, price, seller, category, imageUrl) {
+            products[category].push({
+                id: id,
+                name: name,
+                price: price,
+                seller: seller,
+                image: imageUrl
+            });
+            
+            alert('Produk baru berhasil ditambahkan!');
+            document.getElementById('addProductForm').reset();
+            document.getElementById('newProductPreview').style.backgroundImage = '';
+            loadAdminProducts();
+        }
+    </script>
+</body>
+</html>
+        </p>
+    </body>
+</html>
